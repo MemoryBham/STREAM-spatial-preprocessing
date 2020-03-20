@@ -26,6 +26,7 @@ else
     cfg.subject                 = subjID;
     cfg.numbSessions            = 2;
     cfg.channel                 = 1:128;
+    cfg.lowmemory               = true; % use for systems with low memory
     
     cfg.trialdef.eventtype      = 'STATUS';
     cfg.trialdef.eventvalue     = [65281];
