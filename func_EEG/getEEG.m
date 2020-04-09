@@ -7,7 +7,7 @@ function [dataEEG] = getEEG(cfg)
 filenames_data  = dir([cfg.path, '\*', cfg.subject,'*.bdf']);
 cfg.dataset = [cfg.path,'\', filenames_data(1).name];
 
-filenames_log  = dir([cfg.logpath, '\*', cfg.subject(1:2),'*.txt']);
+filenames_log  = dir([cfg.logpath, '\*', cfg.subject,'*.txt']);
 cfg.logpath = [cfg.logpath '\', filenames_log(1).name];
 
 % read log

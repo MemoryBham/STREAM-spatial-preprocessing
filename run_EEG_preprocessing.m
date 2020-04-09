@@ -33,7 +33,7 @@ else
     cfg.trialdef.postresp       = 2; % in seconds
     
     cfg.hpfilter                = 'yes';
-    cfg.hpfreq                  = 0.5;
+    cfg.hpfreq                  = 0.5; %Hz
     % cfg.hpfiltord             = 3;
     cfg.hpfilttype              = 'fir';%
     cfg.hpfiltdir               = 'twopass';
@@ -68,6 +68,10 @@ end
 cfg = [];
 cfg.session = 2; % only session 2
 dataEEGs2 = selectData_STREAMspatial(cfg, dataEEG);
+
+cfg = [];
+cfg.session = 1; % only session 2
+dataEEGs1 = selectData_STREAMspatial(cfg, dataEEG);
 
 % choose a task phase
 cfg = [];
