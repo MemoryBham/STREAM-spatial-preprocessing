@@ -3,9 +3,9 @@ clear all
 
 %% settings
 
-datapath = {'W:\Marije\Data_STREAM-spatial_BEH\project_students_behavior\'};
+datapath = {'W:\Marije\Data_STREAM-spatial_EEG\Logs\'};
 
-savepath = 'W:\Marije\Data_STREAM-spatial_BEH\';
+savepath = 'W:\Marije\Data_STREAM-spatial_EEG\Preproc\';
 savename = 'results_behavior';
 
 catch_types = {'exemplar', 'perc_1', 'perc_2', 'sem_1', 'sem_2'};
@@ -144,7 +144,7 @@ for lf = 1:nfiles
         RTs(RTs<minRT) = NaN;
         
         avgRT_ret(lf) = nanmean(RTs);
-        Perf_ret(lf) = length(correctID)/length(phaseID);
+        Perf_ret(lf) = length(correctID)/length(find([log.values{phaseID,fieldID_acc}]>=0));
         
         for c = 1:length(catch_types)
             % find catch_types
