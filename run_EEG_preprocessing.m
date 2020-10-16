@@ -25,12 +25,17 @@ else
     cfg.logpath                 = path_log;
     cfg.subject                 = subjID;
     cfg.numbSessions            = 2;
-    cfg.channel                 = 1:128;
+    cfg.channel                 = 1:2;%1:128;
     cfg.lowmemory               = true; % use for systems with low memory
     
     cfg.trialdef.eventtype      = 'STATUS';
     cfg.trialdef.eventvalue     = [65281];
     cfg.trialdef.postresp       = 2; % in seconds
+    
+    cfg.reref                   = 'yes'; 
+    cfg.refchannel              = 'all';
+    cfg.refmethod               = 'avg';
+    if strcmp(cfg.reref,'yes'); cfg.lowmemory = false; end
     
     cfg.hpfilter                = 'yes';
     cfg.hpfreq                  = 0.5; %Hz
